@@ -1,0 +1,16 @@
+@import "keyframes";
+
+.root {
+	block-size: 100%;
+}
+
+.wrapper {
+	display: flex;
+	min-height: 100%;
+	overflow: hidden;
+	flex-direction: column;
+}
+
+.tooltip-container {
+	z-index: 100000;
+}

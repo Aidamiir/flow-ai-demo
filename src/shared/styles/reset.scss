@@ -1,0 +1,133 @@
+@import "mixins";
+
+* {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	-webkit-tap-highlight-color: transparent;
+
+	&,
+	&::before,
+	&::after {
+		box-sizing: border-box;
+	}
+
+	&:focus,
+	&:active {
+		outline: none;
+	}
+
+	::-ms-reveal {
+		display: none;
+	}
+}
+
+html {
+	opacity: 0;
+	scroll-behavior: smooth;
+	transition: opacity var(--dap-transition);
+
+	&.loaded {
+		opacity: 1;
+	}
+
+	&.lock {
+		touch-action: none;
+		overflow: hidden;
+		padding-right: var(--dap-scrollbar-width, #{rem(17)});
+	}
+}
+
+html,
+body {
+	block-size: 100%;
+}
+
+body {
+	overscroll-behavior: none;
+	line-height: var(--dap-line-height);
+	text-rendering: optimizeLegibility;
+	text-size-adjust: 100%;
+	font-family: var(--dap-font-family);
+	font-size: var(--dap-font-size);
+	font-weight: var(--dap-font-weight);
+	color: var(--dap-default-text-color);
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+input,
+button,
+textarea {
+	font-family: inherit;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+input[type="number"] {
+	appearance: textfield;
+
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		appearance: none;
+	}
+}
+
+button {
+	cursor: pointer;
+	user-select: none;
+	line-height: 1;
+	background-color: transparent;
+
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
+
+	&:disabled {
+		cursor: default;
+	}
+}
+
+a {
+	user-select: none;
+	text-decoration: none;
+
+	&:focus,
+	&:active {
+		outline: none;
+	}
+
+	&:visited {
+		text-decoration: none;
+	}
+
+	@include any-hover {
+		text-decoration: none;
+	}
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+img {
+	vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: 400;
+}
+
+sup {
+	color: inherit;
+}

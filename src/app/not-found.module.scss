@@ -1,0 +1,15 @@
+@import "@styles/mixins";
+
+.title {
+	color: #1481b8;
+	font-weight: 600;
+}
+
+.link {
+	color: #1481b8;
+	transition: color var(--dap-transition);
+
+	@include any-hover {
+		color: color-mix(in srgb, #1481b8, #000 10%);
+	}
+}
